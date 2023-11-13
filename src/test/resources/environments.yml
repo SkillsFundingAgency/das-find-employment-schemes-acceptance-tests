@@ -1,0 +1,12 @@
+environments:
+  at:
+    url: ${URL-AT}
+
+  test:
+    url: ${URL-Test}
+
+  pp:
+    url: ${URL-PP}
+
+  live:
+    url: ${URL-Live}

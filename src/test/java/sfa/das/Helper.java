@@ -14,7 +14,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 @Slf4j
 public class Helper {
     /**
-     * Reads the persona yaml file as an InputStream.
+     * Reads the yaml file as an InputStream.
      *
      * @param filename to read.
      * @return Optional input stream.

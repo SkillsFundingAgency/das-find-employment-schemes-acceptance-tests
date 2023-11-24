@@ -1,6 +1,10 @@
+@test
 Feature: Find schemes for your business - check anchors
 
-  @test
+  Scenario: Confirm header and footer anchors on the HOME page
+    Given the user navigates to the "HOME" page
+    Then all home page header and footer anchors link to the correct pages
+
   Scenario: Confirm anchors on the HOME page
     Given the user navigates to the "HOME" page
     Then all HOME anchors link to the correct pages
@@ -25,10 +29,6 @@ Feature: Find schemes for your business - check anchors
     Given the user navigates to the "MULTIPLY" page
     Then all MULTIPLY anchors link to the correct pages
 
-  Scenario: Confirm anchors on the TRAINEESHIPS page
-    Given the user navigates to the "TRAINEESHIPS" page
-    Then all TRAINEESHIPS anchors link to the correct pages
-
   Scenario: Confirm anchors on the HTQ page
     Given the user navigates to the "HTQ" page
     Then all HTQ anchors link to the correct pages
@@ -48,5 +48,10 @@ Feature: Find schemes for your business - check anchors
   Scenario: Confirm anchors on the FREE_COURSES page
     Given the user navigates to the "FREE_COURSES" page
     Then all FREE_COURSES anchors link to the correct pages
+
+  Scenario: Confirm anchors on the CONTACT page
+    Given the user navigates to the "CONTACT" page
+    Then all CONTACT anchors link to the correct pages
+
 
 

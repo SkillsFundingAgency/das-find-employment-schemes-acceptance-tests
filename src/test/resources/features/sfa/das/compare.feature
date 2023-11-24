@@ -1,5 +1,6 @@
 Feature: Find schemes for your business - compare
 
+ @test
   Scenario: Confirm compare of schemes
     Given the user navigates to the "HOME" page
     When the user wants to compare the schemes

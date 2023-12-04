@@ -52,7 +52,7 @@ public class GenerateAllCombinations {
                 new ArrayList<>(List.of(ANCHOR_APPRENTICESHIPS, ANCHOR_BOOTCAMPS, ANCHOR_CARE_LEAVER_COVENANT, ANCHOR_PRISONERS, ANCHOR_T_LEVELS, ANCHOR_SWAP, ANCHOR_INTERNSHIPS, ANCHOR_FREE_COURSES, ANCHOR_MULTIPLY, ANCHOR_HTQ));
 
         ArrayList motivations_recruit_new_staff =
-                new ArrayList<>(List.of(ANCHOR_APPRENTICESHIPS, ANCHOR_BOOTCAMPS, ANCHOR_CARE_LEAVER_COVENANT, ANCHOR_PRISONERS, ANCHOR_T_LEVELS, ANCHOR_SWAP, ANCHOR_INTERNSHIPS));
+                new ArrayList<>(List.of(ANCHOR_APPRENTICESHIPS, ANCHOR_BOOTCAMPS, ANCHOR_CARE_LEAVER_COVENANT, ANCHOR_PRISONERS, ANCHOR_T_LEVELS, ANCHOR_SWAP, ANCHOR_INTERNSHIPS, ANCHOR_HTQ));
         ArrayList motivations_retrain_or_upskill_existing_staff =
                 new ArrayList<>(List.of(ANCHOR_APPRENTICESHIPS, ANCHOR_BOOTCAMPS, ANCHOR_FREE_COURSES, ANCHOR_MULTIPLY, ANCHOR_HTQ));
         ArrayList motivations_offer_short_terms_work_experience_placements =

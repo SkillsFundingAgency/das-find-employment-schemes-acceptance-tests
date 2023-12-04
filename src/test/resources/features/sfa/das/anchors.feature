@@ -1,4 +1,3 @@
-@test
 Feature: Find schemes for your business - check anchors
 
   Scenario: Confirm header and footer anchors on the HOME page
@@ -45,9 +44,9 @@ Feature: Find schemes for your business - check anchors
     Given the user navigates to the "PRISONERS" page
     Then all PRISONERS anchors link to the correct pages
 
-  Scenario: Confirm anchors on the FREE_COURSES page
+  Scenario: Confirm anchors on the FREE_COURSES page and all explore section
     Given the user navigates to the "FREE_COURSES" page
-    Then all FREE_COURSES anchors link to the correct pages
+    Then all FREE_COURSES anchors link to the correct pages and all explore section
 
   Scenario: Confirm anchors on the CONTACT page
     Given the user navigates to the "CONTACT" page

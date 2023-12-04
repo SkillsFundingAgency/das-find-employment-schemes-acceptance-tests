@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
                 "junit:target/feature/junit/cucumber.xml",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
-        tags =  "@test")
-public class TestRunner {
+        tags =  "@javascript_needed")
+public class JavaScriptTestRunner {
 }
 

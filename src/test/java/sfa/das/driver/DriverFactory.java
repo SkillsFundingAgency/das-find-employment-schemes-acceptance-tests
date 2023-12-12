@@ -6,6 +6,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 /**
@@ -14,7 +15,8 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 @Slf4j
 public class DriverFactory {
     public enum DriverType {
-        HTMLUNIT(""),
+        HTMLUNIT("htmlunit"),
+        CHROME_HEADLESS(""),
         CHROME("chrome");
 
         DriverType(String text) {
@@ -29,7 +31,7 @@ public class DriverFactory {
                     return value;
                 }
             }
-            return DriverType.HTMLUNIT;
+            return DriverType.CHROME_HEADLESS;
         }
         public String getText() {
             return this.text;
@@ -71,6 +73,15 @@ public class DriverFactory {
                     }
                 };
                 return htmlUnitDriver;
+
+            case CHROME_HEADLESS:
+                WebDriverManager.chromedriver().cachePath(System.getProperty("user.dir") + "/browser").setup();
+
+                //
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--headless=new");
+
+                return new ChromeDriver(options);
             case CHROME:
                 WebDriverManager.chromedriver().cachePath(System.getProperty("user.dir") + "/browser").setup();
 

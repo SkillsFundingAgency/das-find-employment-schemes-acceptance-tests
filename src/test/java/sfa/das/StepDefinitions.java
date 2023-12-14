@@ -299,6 +299,8 @@ public class StepDefinitions {
             var webdriver = System.getProperty("browser", "htmlunit").toLowerCase();
             try {
                 driver = DriverFactory.getBaseDriver(DriverFactory.DriverType.value(webdriver));
+                //need more time for videos to load
+                driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -1141,14 +1143,14 @@ public class StepDefinitions {
         button.click();
     }
 
-    private void theySeeGivenSchemesCompared(Map<String, String> schemesMap) throws InterruptedException {
+    private void theySeeGivenSchemesCompared(Map<String, String> schemesMap, boolean clickAnchor) throws InterruptedException {
         List<String> anchorsToRemove = new ArrayList<>();
         anchorsToRemove.add(ANCHOR_BACK);
         anchorsToRemove.add(ANCHOR_COMPARED_PAGE_RETURN_TO_LIST);
         anchorsToRemove.add(ANCHOR_HEADER_SKIP_TO_MAIN_CONTENT); //stays on same page
         anchorsToRemove.add(ANCHOR_HOME); //
         anchorsToRemove.addAll(footerMap.keySet());
-// stays on same page
+        anchorsToRemove.addAll(headersMap.keySet());
 
         anchorsToRemove.add(ANCHOR_SHARE_EMAIL); //stays on same page
         anchorsToRemove.add(ANCHOR_SHARE_FACEBOOK); //stays on same page
@@ -1167,12 +1169,17 @@ public class StepDefinitions {
         } catch (TimeoutException t) {
             fail("Comparison table did not appear afer " + 10 + " seconds");
         }
-        compareAndClickAnchors(expectedAnchorsMap, anchorsToRemove, new ComparisonPageSchemesComparator());
+
+        if (clickAnchor) {
+            compareAndClickAnchors(expectedAnchorsMap, anchorsToRemove, new ComparisonPageSchemesComparator());
+        } else {
+            confirmActualAnchors(new ArrayList<>(expectedAnchorsMap.keySet()), anchorsToRemove, new ComparisonPageSchemesComparator());
+        }
     }
 
     @Then("they see all the schemes compared")
     public void theySeeAllTheSchemesCompared() throws InterruptedException {
-        theySeeGivenSchemesCompared(schemesComparisonPageMap);
+        theySeeGivenSchemesCompared(schemesComparisonPageMap, true);
     }
 
     @Then("all home page header and footer anchors link to the correct pages")
@@ -1189,8 +1196,7 @@ public class StepDefinitions {
 
     @Then("schemes are correctly sorted based on the chosen sort")
     public void schemesAreCorrectlySortedBasedOnTheChosenSort() throws InterruptedException, IOException {
-        Thread.sleep(5000);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+
         WebElement selectElement = driver.findElement(By.id(SCHEME_SORT));
         Select select = new Select(selectElement);
 
@@ -1234,10 +1240,12 @@ public class StepDefinitions {
         for (Object scheme : schemes){
             schemesMap.put(homePageToComparePageSchemeMap.get(scheme), schemesComparisonPageMap.get(homePageToComparePageSchemeMap.get(scheme)));
         }
-        theySeeGivenSchemesCompared(schemesMap);
+
+
+        theySeeGivenSchemesCompared(schemesMap, false);
 
         //clear filters on comparison page
         getAnchor(ANCHOR_COMPARISON_PAGE_CLEAR_FILTERS).click();
-        theySeeGivenSchemesCompared(schemesComparisonPageMap);
+        theySeeGivenSchemesCompared(schemesComparisonPageMap, false);
     }
 } 

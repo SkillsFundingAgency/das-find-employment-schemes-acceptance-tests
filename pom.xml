@@ -14,9 +14,8 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<cucumber.version>7.14.0</cucumber.version>
 		<reporting-plugin.version>7.11.0</reporting-plugin.version>
-		<selenium-htmlunit.version>4.12.0</selenium-htmlunit.version>
-		<selenium.version>4.12.1</selenium.version>
-		<webdrivermanager.version>5.5.2</webdrivermanager.version>
+		<selenium.version>4.15.0</selenium.version>
+		<webdrivermanager.version>5.6.2</webdrivermanager.version>
 		<lombok.version>1.18.30</lombok.version>
 		<java-dotenv.version>5.2.2</java-dotenv.version>
 	</properties>
@@ -63,12 +62,13 @@
 			<version>${selenium.version}</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>htmlunit-driver</artifactId>
-			<version>${selenium-htmlunit.version}</version>
-			<scope>test</scope>
+			<artifactId>htmlunit3-driver</artifactId>
+			<version>4.15.1</version>
 		</dependency>
+
 
 		<!-- automate management of the drivers -->
 		<dependency>

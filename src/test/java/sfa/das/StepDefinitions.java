@@ -311,7 +311,7 @@ public class StepDefinitions {
 
         headersMap.put(ANCHOR_HEADER_VIEW_COOKIES, "Cookies");
         headersMap.put(ANCHOR_HEADER_SKIP_TO_MAIN_CONTENT, "Find training and employment schemes for your business");
-        headersMap.put(ANCHOR_HEADER_BETA_BANNER_FEEDBACK, "https://forms.office.com/r/JChsG8Ducg");
+        headersMap.put(ANCHOR_HEADER_BETA_BANNER_FEEDBACK, "https://dferesearch.fra1.qualtrics.com/jfe/form/SV_3geG7aDVWFuYTvo");
 
         homeMap.put(ANCHOR_HOME, "Find training and employment schemes for your business");
         homeMap.put(ANCHOR_HOME_PAGE_CLEAR_FILTERS, "Find training and employment schemes for your business");
@@ -610,19 +610,7 @@ public class StepDefinitions {
 
                 }
             } catch (AssertionError e) {
-
                 log.info("AssertionError");
-                if (driver instanceof HtmlUnitDriver) {
-                    //todo given javascript errors, htmlunit strictness means feedback changes to mailto: instead of MS forms link
-                    if (anchorText.equals("feedback")) {
-                        Assert.assertEquals("Href not as expected " + anchorText, "mailto:customer.experience@education.gov.uk?subject=Feedback%20on%20'Find%20Schemes%20for%20your%20Business'%20Service", anchorElement.getAttribute("href").trim());
-                    } else {
-                        throw new AssertionError();
-                    }
-                    continue;
-                }
-
-
                 for (int i = 0; i < retryCount; i++) {
                     //sometimes there's a delay in getting the title
                     if (expectedAnchorsMap.get(anchorText).startsWith("http") || expectedAnchorsMap.get(anchorText).startsWith("mailto") || expectedAnchorsMap.get(anchorText).startsWith("tel:")) {

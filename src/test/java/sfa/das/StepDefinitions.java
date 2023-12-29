@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,11 +35,12 @@ public class StepDefinitions {
     public static final List<String> ANCHOR_SWAP = Arrays.asList("Sector-based Work Academy Programme (SWAP)","Find out more about SWAPs","SWAPs");
     public static final List<String> ANCHOR_BOOTCAMPS = Arrays.asList("Skills Bootcamps","Find out more about Skills Bootcamps","Skills Bootcamps");
     public static final List <String>ANCHOR_MULTIPLY = Arrays.asList("Multiply","Find out more about Multiply","Multiply");
-    public static final List<String> ANCHOR_HTQ = Arrays.asList("Higher Technical Qualifications (HTQs)","Find out more about Higher Technical Qualifications", "HTQs");
-    public static final List<String> ANCHOR_INTERNSHIPS = Arrays.asList("Supported internships for learners with an education, health and care plan","Supported internships for people with SEND", "Supported internships");
-    public static final List<String> ANCHOR_CARE_LEAVER_COVENANT = Arrays.asList("Care Leaver Covenant","Explore the Care Leaver Covenant","Care Leaver Covenant");
-    public static final List<String> ANCHOR_PRISONERS = Arrays.asList("Employing prisoners and prison leavers","Employing prisoners and prison leavers","Employing prisoners and prison leavers");
-    public static final List<String> ANCHOR_FREE_COURSES = Arrays.asList("Free courses and additional training for your employees","Find courses and additional training","Free courses for jobs");
+    public static final List<String> ANCHOR_HTQ = Arrays.asList("Higher Technical Qualifications (HTQs)","Find out more about HTQs", "HTQs");
+    public static final List<String> ANCHOR_INTERNSHIPS = Arrays.asList("Supported internships for learners with an education, health and care plan","Find out more about supported internships and work placements", "Supported internships");
+    public static final List<String> ANCHOR_CARE_LEAVER_COVENANT = Arrays.asList("Care Leaver Covenant","Find out more about the Care Leaver Covenant","Care Leaver Covenant");
+    public static final List<String> ANCHOR_PRISONERS = Arrays.asList("Employing prisoners and prison leavers","Find out more about employing prisoners and prison leavers","Employing prisoners and prison leavers");
+    public static final List<String> ANCHOR_FREE_COURSES = Arrays.asList("Free courses and additional free training","Find out more about free courses and additional free training","Free courses for jobs");
+
     //todo  public static final String ANCHOR_HEADER_SERVICE_NAME = "Find schemes for your business";
     public static final String ANCHOR_HEADER_SKIP_TO_MAIN_CONTENT = "Skip to main content";
     public static final String ANCHOR_HEADER_VIEW_COOKIES = "View cookies";
@@ -61,36 +61,51 @@ public class StepDefinitions {
     public static final String ANCHOR_FOOTER_PRIVACY = "Privacy";
     public static final String ANCHOR_FOOTER_COOKIES = "Cookies";
     public static final String ANCHOR_FOOTER_CONTACT = "Contact";
+    public static final String ANCHOR_FOOTER_ACCESSIBILITY = "Accessibility";
     public static final String ANCHOR_FOOTER_SCOTLAND = "Scotland";
     public static final String ANCHOR_FOOTER_WALES = "Wales";
     public static final String ANCHOR_FOOTER_NI = "Northern Ireland";
     public static final String ANCHOR_FOOTER_OPEN_GOVERNMENT_LICENCE_V_3_0 = "Open Government Licence v3.0";
     public static final String ANCHOR_FOOTER_CROWN_COPYRIGHT = "© Crown copyright";
-    public static final String ANCHOR_APPRENTICESHIP_TELEPHONE = "08000 150 400";
-    public static final String ANCHOR_APPRENTICESHIP_THE_MINIMUM_WAGE = "the minimum wage";
-    public static final String ANCHOR_APPRENTICESHIP_HOW_APPRENTICESHIPS_CAN_BENEFIT_YOUR_BUSINESS = "how apprenticeships can benefit your business";
-    public static final String ANCHOR_TLEVEL_ACCELERATE_THEIR_APPRENTICESHIPS = "accelerate their apprenticeships";
-    public static final String ANCHOR_TLEVEL_GET_MORE_INFORMATION_ABOUT_T_LEVELS_AND_INDUSTRY_PLACEMENTS = "Get more information about T Levels and industry placements";
-    public static final String ANCHOR_SWAP_HOW_SWAP_COULD_BENEFIT_YOUR_BUSINESS = "how SWAP could benefit your business";
+    public static final String ANCHOR_APPRENTICESHIP_THE_MINIMUM_WAGE = "the apprentice minimum wage";
+    public static final String ANCHOR_APPRENTICESHIP_CALCULATE_YOUR_ESTIMATED_TRAINING_COST_FUNDING = "Calculate your estimated training cost funding";
+    public static final String ANCHOR_APPRENTICESHIP_STEP_BY_STEP = "Read the step-by-step guide on employing an apprentice for your business";
+    public static final String ANCHOR_APPRENTICESHIP_EMAIL = "employer.enquiries@education.gov.uk";
+
+
+    public static final String ANCHOR_TLEVEL_SEE_MORE_ABOUT_HOW_INDUSTRY_PLACEMENTS_WORK = "See more about how industry placements work";
+    public static final String ANCHOR_TLEVEL_EMPLOYER_SUPPORT =  "Find out more about the employer support fund and costs it covers";
+    public static final String ANCHOR_TLEVEL_INDUSTRY_PLACEMENT =  "Read more about your industry placement responsibilities";
+    public static final String ANCHOR_TLEVEL_ACCELERATE_THEIR_APPRENTICESHIPS = "accelerated apprenticeships";
+    public static final String ANCHOR_TLEVEL_GET_MORE_INFORMATION_ABOUT_T_LEVELS_AND_INDUSTRY_PLACEMENTS = "Find out more about industry placements";
+    public static final String ANCHOR_TLEVEL_REGISTER_YOUR_INTEREST_IN_HOSTING = "Register your interest in hosting industry placements";
     public static final String ANCHOR_SWAP_HOW_EMPLOYERS_ARE_USING_SECTOR_BASED_WORK_ACADEMY_PROGRAMMES = "how employers are using sector-based work academy programmes";
-    public static final String ANCHOR_SWAP_TELEPHONE = "0800 169 0178";
-    public static final String ANCHOR_BOOTCAMP_ACCELERATE_THEIR_APPRENTICESHIPS = "accelerate their apprenticeships";
-    public static final String ANCHOR_SWAP_FINDING_TRAINING_PROVIDERS_WHO_ARE_CURRENTLY_BEING_FUNDED_TO_DELIVER_SKILLS_BOOTCAMPS = "finding training providers who are currently being funded to deliver Skills Bootcamps";
-    public static final String ANCHOR_MULTIPLY_FIND_A_COURSE = "Find a course";
+
+    public static final String ANCHOR_SWAP_READ_THE_EMPLOYER_GUIDE_ON_GOV_UK = "read the employer guide on GOV.UK";
+    public static final String ANCHOR_SWAP_CONTACT_THE_EMPLOYER_SERVICES_LINE = "contact the Employer Services Line";
+    public static final String ANCHOR_BOOTCAMP_ACCELERATE_THEIR_APPRENTICESHIPS = "accelerated apprenticeships";
+    public static final String ANCHOR_BOOTCAMP_FINDING_TRAINING_PROVIDERS_WHO_ARE_CURRENTLY_BEING_FUNDED_TO_DELIVER_SKILLS_BOOTCAMPS = "Find a local provider";
+    public static final String ANCHOR_BOOTCAMP_READ_MORE_ON_APPLYING_TO_DELIVER_SKILLS_BOOTCAMPS = "Read more on applying to deliver Skills Bootcamps";
+
+    public static final String ANCHOR_MULTIPLY_QUIZ = "Your employees can take a short quiz to assess their numeracy skills";
     public static final String ANCHOR_MULTIPLY_EMAIL = "multiply.localallocations@education.gov.uk";
-    public static final String ANCHOR_MULTIPLY_READ_MORE_ABOUT_MULTIPLY_SKILLS_FOR_LIFE = "read more about Multiply - Skills for Life";
-    public static final String ANCHOR_HTQ_LEARN_MORE_AND_GET_STARTED_WITH_HTQS = "Learn more and get started with HTQs.";
-    public static final String ANCHOR_INTERNSHIPS_EDUCATION_HEALTH_AND_CARE_EHC_PLAN = "education health and care (EHC) plan";
-    public static final String ANCHOR_INTERNSHIPS_GUIDANCE_ON_SUPPORTED_INTERNSHIPS = "guidance on supported internships";
-    public static final String ANCHOR_CARERLEAVERCOVENANT_FIND_OUT_HOW_TO_JOIN_THE_CARE_LEAVERS_COVENANT = "Find out how to join the Care Leavers Covenant";
-    public static final String ANCHOR_PRISONERS_THE_MINIMUM_WAGE = "the minimum wage";
+    public static final String ANCHOR_MULTIPLY_READ_MORE_ABOUT_MULTIPLY_SKILLS_FOR_LIFE = "You can also search for Multiply courses on the National Careers Service website";
+    public static final String ANCHOR_HTQ_2024_2025 = "In September 2024 and September 2025 students will be able to take HTQs in more sectors";
+    public static final String ANCHOR_HTQ_LEARN_MORE_AND_GET_STARTED_WITH_HTQS = "View a list of HTQ providers and the courses they offer";
+    public static final String ANCHOR_INTERNSHIPS_EDUCATION_HEALTH_AND_CARE_EHC_PLAN = "an education health and care (EHC) plan";
+    public static final String ANCHOR_INTERNSHIPS_GUIDANCE_ON_SUPPORTED_INTERNSHIPS = "read guidance on GOV.UK";
+    public static final String ANCHOR_INTERNSHIPS_WORK_LEAD = "the Internships Work lead for your region";
+    public static final String ANCHOR_CARERLEAVERCOVENANT_THE_INCLUSIVE_EMPLOYER_TOOLKIT = "the Inclusive Employer Toolkit";
+    public static final String ANCHOR_CARERLEAVERCOVENANT_FIND_OUT_HOW_TO_JOIN_THE_CARE_LEAVERS_COVENANT = "Visit the Care Leaver Covenant website for more information";
+    public static final String ANCHOR_CARERLEAVERCOVENANT_EMAIL = "info@mycovenant.org.uk";
+
     public static final String ANCHOR_PRISONERS_HOW_BUSINESSES_ARE_WORKING_WITH_SERVING_PRISONERS_AND_HIRING_PRISON_LEAVERS = "how businesses are working with serving prisoners and hiring prison leavers";
-    public static final String ANCHOR_PRISONERS_REGISTER_YOUR_INTEREST_ON_THE_NEW_FUTURES_NETWORK_WEBSITE = "Register your interest on the New Futures Network website.";
-    public static final String ANCHOR_FREECOURSES_THE_NATIONAL_CAREERS_SERVICE_AND_HOW_TO_CONTACT_THEM = "the National Careers Service and how to contact them";
-    public static final String ANCHOR_FREECOURSES_FOR_JOBS = "Free Courses for Jobs";
-    public static final String ANCHOR_APPRENTICESHIP_HIRE_AN_APPRENTICE = "Hire an apprentice";
+    public static final String ANCHOR_PRISONERS_REGISTER_YOUR_INTEREST_ON_THE_NEW_FUTURES_NETWORK_WEBSITE = "New Futures Network website";
+    public static final String ANCHOR_FREECOURSES_FOR_JOBS = "Level 3 free courses for jobs";
+    public static final String ANCHOR_FREECOURSES_THE_NATIONAL_CAREERS_SERVICE_AND_HOW_TO_CONTACT_THEM = "Find a course on the National Careers Service website";
+
     public static final String ANCHOR_CONTACTS_CALL_CHARGES = "Call charges and phone numbers - GOV.UK (www.gov.uk)";
-    public static final String ANCHOR_CONTACTS_APPRENTICESHIP_EMAIL = "employer.enquiries@education.gov.uk";
+    public static final String ANCHOR_CONTACTS_APPRENTICESHIP_EMAIL = ANCHOR_APPRENTICESHIP_EMAIL;
     public static final String ANCHOR_CONTACTS_APPRENTICESHIP_WEBSITE = "APPRENTICESHIP Scheme website";
     public static final String ANCHOR_CONTACTS_TLEVELS_EMAIL = "Tlevel.placement@education.gov.uk";
     public static final String ANCHOR_CONTACTS_TLEVELS_FORM = "TLEVELS Online contact form";
@@ -108,6 +123,14 @@ public class StepDefinitions {
     public static final String ANCHOR_CONTACTS_PRISONERS_FORM = "PRISONERS Online contact form";
     public static final String ANCHOR_CONTACTS_PRISONERS_WEBSITE = "PRISONERS Scheme website";
 
+    public static final String ANCHOR_ACCESSIBILITY_ABILITY_NET = "AbilityNet";
+    public static final String ANCHOR_ACCESSIBILITY_EMAIL = "Customer.EXPERIENCE@service.education.gov.uk";
+    public static final String ANCHOR_ACCESSIBILITY_EMAIL2 = ANCHOR_ACCESSIBILITY_EMAIL;
+    public static final String ANCHOR_ACCESSIBILITY_EASS = "contact the Equality Advisory and Support Service (EASS)";
+
+    public static final String ANCHOR_ACCESSIBILITY_WCAG = "Web Content Accessibility Guidelines version 2.2 AA standard";
+    public static final String ANCHOR_ACCESSIBILITY_WCAG2 = ANCHOR_ACCESSIBILITY_WCAG;
+
     public static final String CURRENT_PAGE_URL = "CURRENT_PAGE_URL";
     public static final String SCHEME_SORT = "scheme-sort";
 
@@ -119,6 +142,8 @@ public class StepDefinitions {
     Map<String, String> headersMap = new HashMap<>();
     Map<String, String> homeMap = new HashMap<>();
     Map<String, String> footerMap = new HashMap<>();
+
+
     public static Map<String, String> schemesExploreSectionMap = new LinkedHashMap<>();
 
     static {
@@ -234,64 +259,74 @@ public class StepDefinitions {
     }
     public static Map<String, String> apprenticeshipsMap = new LinkedHashMap<>();
     static {
-        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_THE_MINIMUM_WAGE, "https://www.gov.uk/national-minimum-wage-rates");
-        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_HOW_APPRENTICESHIPS_CAN_BENEFIT_YOUR_BUSINESS, "https://www.apprenticeships.gov.uk/employers/benefits-of-hiring-apprentice");
-        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_HIRE_AN_APPRENTICE, "https://www.apprenticeships.gov.uk/employers/hiring-an-apprentice");
-        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_TELEPHONE, "tel:" + ANCHOR_APPRENTICESHIP_TELEPHONE.replace(" ", "")); //todo opens facetime
+        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_THE_MINIMUM_WAGE, "https://www.gov.uk/national-minimum-wage-rates#apprentices");
+        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_CALCULATE_YOUR_ESTIMATED_TRAINING_COST_FUNDING, "https://www.apprenticeships.gov.uk/employers/understanding-apprenticeship-benefits-and-funding#available-funding");
+        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_STEP_BY_STEP, "https://www.apprenticeships.gov.uk/employers/the-road-to-a-quality-apprenticeship");
+        apprenticeshipsMap.put(ANCHOR_APPRENTICESHIP_EMAIL, "mailto:" + ANCHOR_APPRENTICESHIP_EMAIL);
     }
     public static Map<String, String> tLevels = new LinkedHashMap<>();
     static {
+        tLevels.put(ANCHOR_TLEVEL_SEE_MORE_ABOUT_HOW_INDUSTRY_PLACEMENTS_WORK, "https://employers.tlevels.gov.uk/hc/en-gb/articles/4403442955154-Which-industry-placement-models-could-work-for-you-");
+        tLevels.put(ANCHOR_TLEVEL_EMPLOYER_SUPPORT, "https://www.gov.uk/government/publications/employer-support-fund-for-t-level-industry-placements");
+        tLevels.put(ANCHOR_TLEVEL_INDUSTRY_PLACEMENT, "https://employers.tlevels.gov.uk/hc/en-gb/articles/4403450083346-Your-industry-placement-responsibilities");
         tLevels.put(ANCHOR_TLEVEL_ACCELERATE_THEIR_APPRENTICESHIPS, "https://www.gov.uk/guidance/how-can-apprenticeships-be-delivered-for-your-business#accelerated-apprenticeships");
         tLevels.put(ANCHOR_TLEVEL_GET_MORE_INFORMATION_ABOUT_T_LEVELS_AND_INDUSTRY_PLACEMENTS, "https://employers.tlevels.gov.uk/hc/en-gb");
+        tLevels.put(ANCHOR_TLEVEL_REGISTER_YOUR_INTEREST_IN_HOSTING, "https://employers.tlevels.gov.uk/hc/en-gb/articles/8481078453138");
+
     }
 
     public static Map<String, String> bootcamps = new LinkedHashMap<>();
     static {
         bootcamps.put(ANCHOR_BOOTCAMP_ACCELERATE_THEIR_APPRENTICESHIPS, "How can apprenticeships be delivered for your business? - GOV.UK");
-        bootcamps.put(ANCHOR_SWAP_FINDING_TRAINING_PROVIDERS_WHO_ARE_CURRENTLY_BEING_FUNDED_TO_DELIVER_SKILLS_BOOTCAMPS, "Skills Bootcamps training providers - GOV.UK");
+        bootcamps.put(ANCHOR_BOOTCAMP_FINDING_TRAINING_PROVIDERS_WHO_ARE_CURRENTLY_BEING_FUNDED_TO_DELIVER_SKILLS_BOOTCAMPS, "Skills Bootcamps training providers - GOV.UK");
+        bootcamps.put(ANCHOR_BOOTCAMP_READ_MORE_ON_APPLYING_TO_DELIVER_SKILLS_BOOTCAMPS, "https://www.gov.uk/guidance/bid-to-supply-skills-bootcamps");
     }
     public static Map<String, String> multiply = new LinkedHashMap<>();
     static {
-        multiply.put(ANCHOR_MULTIPLY_FIND_A_COURSE, "Results | Find a course | National Careers Service");
+        multiply.put(ANCHOR_MULTIPLY_QUIZ, "https://www.riddle.com/view/373677");
         multiply.put(ANCHOR_MULTIPLY_EMAIL, "mailto:" + ANCHOR_MULTIPLY_EMAIL);
-        multiply.put(ANCHOR_MULTIPLY_READ_MORE_ABOUT_MULTIPLY_SKILLS_FOR_LIFE, "Multiply - Skills for Life");
+        multiply.put(ANCHOR_MULTIPLY_READ_MORE_ABOUT_MULTIPLY_SKILLS_FOR_LIFE, "https://nationalcareers.service.gov.uk/find-a-course");
     }
 
     public static Map<String, String> htq = new LinkedHashMap<>();
     static {
+        htq.put(ANCHOR_HTQ_2024_2025, "https://www.gov.uk/government/publications/higher-technical-qualification-overview/higher-technical-qualification-an-introduction#available-subjects");
         htq.put(ANCHOR_HTQ_LEARN_MORE_AND_GET_STARTED_WITH_HTQS, "Providers delivering Higher Technical Qualifications - GOV.UK");
     }
 
     public static Map<String, String> freeCourses = new LinkedHashMap<>();
     static {
         freeCourses.put(ANCHOR_FREECOURSES_FOR_JOBS, "Free courses for jobs - GOV.UK");
-        freeCourses.put(ANCHOR_FREECOURSES_THE_NATIONAL_CAREERS_SERVICE_AND_HOW_TO_CONTACT_THEM, "Careers advice - job profiles, information and resources | National Careers Service");
+        freeCourses.put(ANCHOR_FREECOURSES_THE_NATIONAL_CAREERS_SERVICE_AND_HOW_TO_CONTACT_THEM, "https://nationalcareers.service.gov.uk/find-a-course");
     }
 
     public static Map<String, String> careLeaverCovenant = new LinkedHashMap<>();
     static {
-        careLeaverCovenant.put(ANCHOR_CARERLEAVERCOVENANT_FIND_OUT_HOW_TO_JOIN_THE_CARE_LEAVERS_COVENANT, "Companies & Charities - Care Leaver Covenant");
+        careLeaverCovenant.put(ANCHOR_CARERLEAVERCOVENANT_THE_INCLUSIVE_EMPLOYER_TOOLKIT, "https://mycovenant.org.uk/support-the-covenant/inclusive-employment-toolkit/");
+        careLeaverCovenant.put(ANCHOR_CARERLEAVERCOVENANT_FIND_OUT_HOW_TO_JOIN_THE_CARE_LEAVERS_COVENANT, "About the CLC - Care Leaver Covenant");
+        careLeaverCovenant.put(ANCHOR_CARERLEAVERCOVENANT_EMAIL, "mailto:" + ANCHOR_CARERLEAVERCOVENANT_EMAIL);
     }
 
     public static Map<String, String> internships = new LinkedHashMap<>();
     static {
         internships.put(ANCHOR_INTERNSHIPS_EDUCATION_HEALTH_AND_CARE_EHC_PLAN, "Children with special educational needs and disabilities (SEND): Extra help - GOV.UK");
         internships.put(ANCHOR_INTERNSHIPS_GUIDANCE_ON_SUPPORTED_INTERNSHIPS, "Providing supported internships for young people with an EHC plan - GOV.UK");
+        internships.put(ANCHOR_INTERNSHIPS_WORK_LEAD, "https://www.ndti.org.uk/about-us/ndti-people/ndti-regional-leads");
     }
 
     public static Map<String, String> swap = new LinkedHashMap<>();
     static {
-        swap.put(ANCHOR_SWAP_HOW_SWAP_COULD_BENEFIT_YOUR_BUSINESS, "Sector-based work academy programme: employer guide - GOV.UK");
         swap.put(ANCHOR_SWAP_HOW_EMPLOYERS_ARE_USING_SECTOR_BASED_WORK_ACADEMY_PROGRAMMES, "How employers are benefitting from sector-based work academies - Case study - GOV.UK");
-        swap.put(ANCHOR_SWAP_TELEPHONE, "tel:" + ANCHOR_SWAP_TELEPHONE.replace(" ", ""));
+        swap.put(ANCHOR_SWAP_READ_THE_EMPLOYER_GUIDE_ON_GOV_UK, "https://www.gov.uk/government/publications/sector-based-work-academies-employer-guide");
+        swap.put(ANCHOR_SWAP_CONTACT_THE_EMPLOYER_SERVICES_LINE, "https://www.gov.uk/jobcentre-plus-help-for-recruiters/recruitment-advice-and-support#contact-the-employer-services-line");
     }
     public static Map<String, String> prisoners = new LinkedHashMap<>();
     static {
-        prisoners.put(ANCHOR_PRISONERS_THE_MINIMUM_WAGE, "National Minimum Wage and National Living Wage rates - GOV.UK");
         prisoners.put(ANCHOR_PRISONERS_HOW_BUSINESSES_ARE_WORKING_WITH_SERVING_PRISONERS_AND_HIRING_PRISON_LEAVERS, "https://newfuturesnetwork.gov.uk/case-studies/#"); //todo link doesn't work
-        prisoners.put(ANCHOR_PRISONERS_REGISTER_YOUR_INTEREST_ON_THE_NEW_FUTURES_NETWORK_WEBSITE, "https://newfuturesnetwork.gov.uk/register/"); //todo link doesn't work
+        prisoners.put(ANCHOR_PRISONERS_REGISTER_YOUR_INTEREST_ON_THE_NEW_FUTURES_NETWORK_WEBSITE, "https://newfuturesnetwork.gov.uk/"); //todo link doesn't work
     }
     Map<String, String> contacts = new HashMap<>();
+    Map<String, String> accessibility = new HashMap<>();
 
     @Before(order = 1)
     public void setup(Scenario scenario) {
@@ -356,6 +391,15 @@ public class StepDefinitions {
 
         contacts.put(ANCHOR_CONTACTS_PRISONERS_FORM, "https://newfuturesnetwork.gov.uk/register/");
         contacts.put(ANCHOR_CONTACTS_PRISONERS_WEBSITE, "https://newfuturesnetwork.gov.uk/");
+
+        accessibility.put(ANCHOR_ACCESSIBILITY_ABILITY_NET, "https://mcmw.abilitynet.org.uk/");
+        accessibility.put(ANCHOR_ACCESSIBILITY_EMAIL, "mailto:" + ANCHOR_CONTACTS_APPRENTICESHIP_EMAIL);
+        accessibility.put(ANCHOR_ACCESSIBILITY_EMAIL2, "mailto:" + ANCHOR_ACCESSIBILITY_EMAIL2);
+        accessibility.put(ANCHOR_ACCESSIBILITY_EASS, "https://www.equalityadvisoryservice.com/");
+        accessibility.put(ANCHOR_ACCESSIBILITY_WCAG, "https://w3c.github.io/wcag/guidelines/22/");
+        accessibility.put(ANCHOR_ACCESSIBILITY_WCAG2, "https://w3c.github.io/wcag/guidelines/22/");
+
+
     }
 
     public WebElement getAnchor(String text) {
@@ -364,6 +408,13 @@ public class StepDefinitions {
 
     @Then("all APPRENTICESHIPS anchors link to the correct pages")
     public void allAPPRENTICESHIPSAnchorsLinkToTheCorrectPages() throws InterruptedException {
+
+        List<WebElement> h2Elements = driver.findElements(By.tagName("h2"));
+        Assert.assertEquals("H2 should be govuk-heading-l - https://dfedigital.atlassian.net/browse/CE-307 ", "govuk-heading-l", h2Elements.get(0).getAttribute("class") );
+
+        List<WebElement> h3Elements = driver.findElements(By.tagName("h3"));
+        Assert.assertEquals("H3 should be govuk-heading-m - https://dfedigital.atlassian.net/browse/CE-307 ", "govuk-heading-m", h3Elements.get(0).getAttribute("class") );
+
         Map<String, String> expectedAnchorsMap = new HashMap<>();
         expectedAnchorsMap.putAll(backMap);
         expectedAnchorsMap.putAll(apprenticeshipsMap);
@@ -505,6 +556,22 @@ public class StepDefinitions {
         Assert.assertEquals("Href not as expected " + ANCHOR_CONTACTS_PRISONERS_FORM, contacts.get(ANCHOR_CONTACTS_PRISONERS_FORM), forms.get(2).getAttribute("href").trim());
     }
 
+    @Then("all ACCESSIBILITY anchors link to the correct pages")
+    public void allACCESSIBILITYAnchorsLinkToTheCorrectPages() throws InterruptedException {
+        Map<String, String> expectedAnchorsMap = new HashMap<>();
+        expectedAnchorsMap.putAll(backMap);
+        expectedAnchorsMap.put(ANCHOR_ACCESSIBILITY_ABILITY_NET, accessibility.get(ANCHOR_ACCESSIBILITY_ABILITY_NET));
+        expectedAnchorsMap.put(ANCHOR_ACCESSIBILITY_EMAIL, accessibility.get(ANCHOR_ACCESSIBILITY_EMAIL));
+        expectedAnchorsMap.put(ANCHOR_ACCESSIBILITY_EMAIL2, accessibility.get(ANCHOR_ACCESSIBILITY_EMAIL2));
+        expectedAnchorsMap.put(ANCHOR_ACCESSIBILITY_EASS, accessibility.get(ANCHOR_ACCESSIBILITY_EASS));
+        expectedAnchorsMap.put(ANCHOR_ACCESSIBILITY_WCAG, accessibility.get(ANCHOR_ACCESSIBILITY_WCAG));
+        expectedAnchorsMap.put(ANCHOR_ACCESSIBILITY_WCAG2, accessibility.get(ANCHOR_ACCESSIBILITY_WCAG2));
+
+        List<String> anchorsToRemove = populateAnchorsToRemove();
+        confirmPageAnchorsLite(expectedAnchorsMap, anchorsToRemove, new AccessibilityPageComparator());
+
+    }
+
     @NotNull
     private static List<String> populateAnchorsToRemove() {
         List<String> anchorsToRemove = new ArrayList<>();
@@ -643,7 +710,7 @@ public class StepDefinitions {
     private List<String> confirmActualAnchors(List<String> expectedAnchors, List<String> anchorsToRemove, Comparator comparator) throws InterruptedException {
         List<String> actualAnchors = new ArrayList<>();
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         List<WebElement> anchors = driver.findElements(By.tagName("a"));
 
         for (WebElement anchor : anchors) {
@@ -674,7 +741,11 @@ public class StepDefinitions {
 //                .replace(ANCHOR_FREE_COURSES.get(SCHEME_ANCHOR_NAME_HOMEPAGE), "FREE_COURSES")
  //       );
 
-        Assert.assertEquals("anchors list should be the same", expectedAnchors, mutableNonEmptyActualAnchors);
+        //removed duplicates
+        LinkedHashSet<String> uniqueSet = new LinkedHashSet<>(mutableNonEmptyActualAnchors);
+        ArrayList<String> uniqueList = new ArrayList<>(uniqueSet);
+
+        Assert.assertEquals("anchors list should be the same", expectedAnchors, uniqueList);
         return mutableNonEmptyActualAnchors;
     }
 
@@ -738,13 +809,15 @@ public class StepDefinitions {
             }
             case "FREE_COURSES" -> {
                 getAnchor(ANCHOR_FREE_COURSES.get(SCHEME_ANCHOR_NAME_HOMEPAGE)).click();
-                WebElement button = driver.findElement(By.xpath("//*[text()='Show all sections']"));
-                button.click();
                 Assert.assertEquals(schemesHomePageDefaultMap.get(ANCHOR_FREE_COURSES.get(SCHEME_ANCHOR_NAME_HOMEPAGE)), driver.getTitle());
             }
             case "CONTACT" -> {
                 getAnchor(ANCHOR_FOOTER_CONTACT).click();
                 Assert.assertEquals(footerMap.get(ANCHOR_FOOTER_CONTACT), driver.getTitle());
+            }
+            case "ACCESSIBILITY" -> {
+                getAnchor(ANCHOR_FOOTER_ACCESSIBILITY).click();
+                Assert.assertEquals(footerMap.get(ANCHOR_FOOTER_ACCESSIBILITY), driver.getTitle());
             }
 
             default -> Assert.fail("unknown page");
@@ -1172,6 +1245,19 @@ public class StepDefinitions {
 
     @Then("all home page header and footer anchors link to the correct pages")
     public void allHomePageHeaderAndFooterAnchorsLinkToTheCorrectPages() throws InterruptedException {
+
+        WebElement imageElement = driver.findElement(By.cssSelector("img.app-header__department-for-education-logo"));
+        Assert.assertEquals("Accessibility - https://dfedigital.atlassian.net/browse/CE-303",  "Department for education logo", imageElement.getAttribute("alt"));
+
+        WebElement hiddenFilterButton  = driver.findElement(By.id("filter-schemes"));
+        Assert.assertEquals("Accessibility - https://dfedigital.atlassian.net/browse/CE-306",  "button", hiddenFilterButton.getAttribute("role"));
+
+        WebElement anchorElement = getAnchor(ANCHOR_HOME_SKILLS_FOR_CAREERS); // Replace with appropriate locator
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String fontWeight = (String) js.executeScript("return window.getComputedStyle(arguments[0], null).getPropertyValue('font-weight');", anchorElement);
+        Assert.assertEquals("Accessibility - https://dfedigital.atlassian.net/browse/CE-302",  "bold", fontWeight);
+
+
         Map<String, String> expectedAnchorsMap = new HashMap<>();
 
         List<String> anchorsToRemove = new ArrayList<>();

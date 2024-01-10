@@ -52,5 +52,8 @@ Feature: Find schemes for your business - check anchors
     Given the user navigates to the "CONTACT" page
     Then all CONTACT anchors link to the correct pages
 
+  Scenario: Confirm anchors on the ACCESSIBILITY page
+    Given the user navigates to the "ACCESSIBILITY" page
+    Then all ACCESSIBILITY anchors link to the correct pages
 
 

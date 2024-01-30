@@ -16,10 +16,6 @@ Feature: Find schemes for your business - check anchors
     Given the user navigates to the "T_LEVELS" page
     Then all T_LEVELS anchors link to the correct pages
 
-  Scenario: Confirm anchors on the SWAP page
-    Given the user navigates to the "SWAP" page
-    Then all SWAP anchors link to the correct pages
-
   Scenario: Confirm anchors on the BOOTCAMPS page
     Given the user navigates to the "BOOTCAMPS" page
     Then all BOOTCAMPS anchors link to the correct pages
@@ -39,6 +35,10 @@ Feature: Find schemes for your business - check anchors
   Scenario: Confirm anchors on the CARE_LEAVER_COVENANT page
     Given the user navigates to the "CARE_LEAVER_COVENANT" page
     Then all CARE_LEAVER_COVENANT anchors link to the correct pages
+
+  Scenario: Confirm anchors on the SWAP page
+    Given the user navigates to the "SWAP" page
+    Then all SWAP anchors link to the correct pages
 
   Scenario: Confirm anchors on the PRISONERS page
     Given the user navigates to the "PRISONERS" page

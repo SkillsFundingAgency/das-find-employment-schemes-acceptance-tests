@@ -68,6 +68,7 @@ public class DriverFactory {
                         webClient = super.modifyWebClient(webClient);
                         webClient.getOptions().setThrowExceptionOnScriptError(false);
                         webClient.getOptions().setJavaScriptEnabled(true);
+                        webClient.setScriptPreProcessor(new FixTypeErrorScriptPreProcessor());
                         webClient.setJavaScriptErrorListener(new SilentJavaScriptErrorListener());
                         return webClient;
                     }

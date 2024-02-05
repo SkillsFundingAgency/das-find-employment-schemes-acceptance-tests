@@ -17,17 +17,6 @@ public class DefaultHomePageSchemesComparator implements Comparator<String> {
 
         order.addAll(backMap.keySet());
 
-        order.addAll(apprenticeshipsMap.keySet());
-        order.addAll(tLevels.keySet());
-        order.addAll(bootcamps.keySet());
-        order.addAll(multiply.keySet());
-        order.addAll(htq.keySet());
-        order.addAll(freeCourses.keySet());
-        order.addAll(careLeaverCovenant.keySet());
-        order.addAll(internships.keySet());
-        order.addAll(swap.keySet());
-        order.addAll(prisoners.keySet());
-
         order.addAll(schemesHomePageDefaultMap.keySet());
 
         order.add(ANCHOR_SHARE_EMAIL);

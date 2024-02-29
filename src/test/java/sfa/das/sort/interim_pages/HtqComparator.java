@@ -14,7 +14,6 @@ public class HtqComparator implements Comparator<String> {
 
     static {
 
-        order.addAll(backMap.keySet());
 
         order.addAll(htq.keySet());
 

@@ -17,7 +17,6 @@ public class MultiplyComparator implements Comparator<String> {
         order.add(ANCHOR_HEADER_BETA_BANNER_FEEDBACK);
 
 
-        order.addAll(backMap.keySet());
 
         order.addAll(multiply.keySet());
 

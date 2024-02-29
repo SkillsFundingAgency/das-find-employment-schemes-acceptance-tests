@@ -18,7 +18,6 @@ public class DefaultExploreSchemesComparator implements Comparator<String> {
 
         order.add(ANCHOR_HOME_SKILLS_FOR_CAREERS);
 
-        order.addAll(backMap.keySet());
 
         order.addAll(schemesExploreSectionMap.keySet());
 
@@ -61,7 +60,6 @@ public class DefaultExploreSchemesComparator implements Comparator<String> {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        list.addAll((backMap.keySet()));
         list.addAll(freeCourses.keySet());
         list.addAll(schemesExploreSectionMap.keySet());
 

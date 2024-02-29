@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static sfa.das.StepDefinitions.schemesHomePageDurationMap;
-public class DurationHomePageSchemesComparator implements Comparator<String> {
+public class DurationFindSchemePageSchemesComparator implements Comparator<String> {
 
     static final List<String> order = new ArrayList<>( );
 //    Duration: (Shortest First)
@@ -44,7 +44,7 @@ public class DurationHomePageSchemesComparator implements Comparator<String> {
         System.out.println("Before sorting: " + list);
 
         // Sort the list using the custom comparator
-        Collections.sort(list, new DurationHomePageSchemesComparator());
+        Collections.sort(list, new DurationFindSchemePageSchemesComparator());
 
         // Print the list after sorting
         System.out.println("After sorting: " + list);

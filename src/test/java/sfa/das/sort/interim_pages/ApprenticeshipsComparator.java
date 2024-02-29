@@ -16,7 +16,6 @@ public class ApprenticeshipsComparator implements Comparator<String> {
         order.add(ANCHOR_HEADER_VIEW_COOKIES);
         order.add(ANCHOR_HEADER_BETA_BANNER_FEEDBACK);
 
-        order.addAll(backMap.keySet());
 
         order.addAll(apprenticeshipsMap.keySet());
 

@@ -1,12 +1,12 @@
 Feature: Find schemes for your business - check anchors
 
-  Scenario: Confirm header and footer anchors on the HOME page
-    Given the user navigates to the "HOME" page
+  Scenario: Confirm header and footer anchors on the FIND_SCHEMES page
+    Given the user navigates to the "FIND_SCHEMES" page
     Then all home page header and footer anchors link to the correct pages
 
-  Scenario: Confirm anchors on the HOME page
-    Given the user navigates to the "HOME" page
-    Then all HOME anchors link to the correct pages
+  Scenario: Confirm anchors on the FIND_SCHEMES page
+    Given the user navigates to the "FIND_SCHEMES" page
+    Then all FIND_SCHEMES anchors link to the correct pages
 
   Scenario: Confirm anchors on the APPRENTICESHIPS page
     Given the user navigates to the "APPRENTICESHIPS" page
@@ -55,5 +55,9 @@ Feature: Find schemes for your business - check anchors
   Scenario: Confirm anchors on the ACCESSIBILITY page
     Given the user navigates to the "ACCESSIBILITY" page
     Then all ACCESSIBILITY anchors link to the correct pages
+
+  Scenario: Confirm anchors on the PAGE_NOT_FOUND page
+    Given the user navigates to the "PAGE_NOT_FOUND" page
+    Then all PAGE_NOT_FOUND anchors link to the correct pages
 
 

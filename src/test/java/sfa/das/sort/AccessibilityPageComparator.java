@@ -13,7 +13,6 @@ public class AccessibilityPageComparator implements Comparator<String> {
     static final List<String> order = new ArrayList<>( );
 
     static {
-        order.addAll(backMap.keySet());
 
         order.add(ANCHOR_ACCESSIBILITY_ABILITY_NET);
         order.add(ANCHOR_ACCESSIBILITY_EMAIL);

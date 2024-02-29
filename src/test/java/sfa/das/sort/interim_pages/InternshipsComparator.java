@@ -14,7 +14,6 @@ public class InternshipsComparator implements Comparator<String> {
 
     static {
 
-        order.addAll(backMap.keySet());
 
         order.addAll(internships.keySet());
 

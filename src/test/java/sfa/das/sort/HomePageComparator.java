@@ -1,4 +1,4 @@
-package sfa.das.sort.interim_pages;
+package sfa.das.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,16 +8,16 @@ import java.util.List;
 import static sfa.das.StepDefinitions.*;
 
 
-public class FreeCoursesComparator implements Comparator<String> {
+public class HomePageComparator implements Comparator<String> {
 
     static final List<String> order = new ArrayList<>( );
 
     static {
+        order.add(ANCHOR_HEADER_VIEW_COOKIES);
+        order.add(ANCHOR_HEADER_BETA_BANNER_FEEDBACK);
 
 
-        order.addAll(freeCourses.keySet());
-        order.addAll(schemesExploreSectionMap.keySet());
-
+        order.addAll(homeMap.keySet());
 
         order.add(ANCHOR_SHARE_EMAIL);
         order.add(ANCHOR_SHARE_FACEBOOK);
@@ -58,21 +58,22 @@ public class FreeCoursesComparator implements Comparator<String> {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        list.addAll(freeCourses.keySet());
-        list.addAll(schemesExploreSectionMap.keySet());
+     //   list.addAll((backMap.keySet()));
+      //  list.addAll(freeCourses.keySet());
+      //  list.addAll(schemesHomePageDefaultMap.keySet());
 
-    //    list.add(ANCHOR_CONTACTS_CALL_CHARGES);
-     //   list.add(ANCHOR_CONTACTS_APPRENTICESHIP_EMAIL);
-     //   list.add(ANCHOR_CONTACTS_TLEVELS_EMAIL);
-//        list.add(ANCHOR_CONTACTS_MULTIPLY_EMAIL);
-//        list.add(ANCHOR_CONTACTS_MULTIPLY_FINDER);
-//        list.add(ANCHOR_CONTACTS_CARERLEAVERCOVENANT_EMAIL);
+        list.add(ANCHOR_CONTACTS_CALL_CHARGES);
+        list.add(ANCHOR_CONTACTS_APPRENTICESHIP_EMAIL);
+        list.add(ANCHOR_CONTACTS_TLEVELS_EMAIL);
+        list.add(ANCHOR_CONTACTS_MULTIPLY_EMAIL);
+        list.add(ANCHOR_CONTACTS_MULTIPLY_FINDER);
+        list.add(ANCHOR_CONTACTS_CARERLEAVERCOVENANT_EMAIL);
 
         // Print the list before sorting
         System.out.println("Before sorting: " + list);
 
         // Sort the list using the custom comparator
-        Collections.sort(list, new FreeCoursesComparator());
+        Collections.sort(list, new HomePageComparator());
 
         // Print the list after sorting
         System.out.println("After sorting: " + list);

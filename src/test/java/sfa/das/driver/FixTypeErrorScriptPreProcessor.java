@@ -25,8 +25,8 @@ public class FixTypeErrorScriptPreProcessor implements ScriptPreProcessor {
         if (sourceName.contains("/site.js") && !sourceName.contains("/site.js#")) {
             patchedSourceCode = StringUtils.replace(
                     sourceCode,
-                    "var t=this,i=t.getAttribute(\"data-menu-section\");const n=document.querySelector('.govuk-header__navigation-item[data-menu-section=\"'+i+'\"]');",
-                    "var t=this,ix=t.getAttribute(\"data-menu-section\");const n=document.querySelector('.govuk-header__navigation-item[data-menu-section=\"'+ix+'\"]');");
+                    "var t=this;",
+                    "var tx=this;");
         }
 
         if (nextScriptPreProcessor_ != null) {

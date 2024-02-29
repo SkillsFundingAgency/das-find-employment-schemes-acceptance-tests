@@ -13,7 +13,6 @@ public class ContactPageComparator implements Comparator<String> {
     static final List<String> order = new ArrayList<>( );
 
     static {
-        order.addAll(backMap.keySet());
 
         order.add(ANCHOR_CONTACTS_CALL_CHARGES);
         order.add(ANCHOR_CONTACTS_APPRENTICESHIP_EMAIL);

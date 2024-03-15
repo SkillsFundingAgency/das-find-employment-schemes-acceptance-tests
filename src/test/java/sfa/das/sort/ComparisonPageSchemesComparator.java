@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import static sfa.das.StepDefinitions.*;
-import static sfa.das.StepDefinitions.backMap;
 
 
 public class ComparisonPageSchemesComparator implements Comparator<String> {

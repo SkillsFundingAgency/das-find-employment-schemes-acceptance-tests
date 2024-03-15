@@ -5,7 +5,7 @@ import java.util.*;
 import static sfa.das.StepDefinitions.*;
 
 
-public class DefaultHomePageSchemesComparator implements Comparator<String> {
+public class DefaultFindSchemePageSchemesComparator implements Comparator<String> {
 
     static final List<String> order = new ArrayList<>( );
 
@@ -15,7 +15,6 @@ public class DefaultHomePageSchemesComparator implements Comparator<String> {
 
         order.add(ANCHOR_HOME_SKILLS_FOR_CAREERS);
 
-        order.addAll(backMap.keySet());
 
         order.addAll(schemesHomePageDefaultMap.keySet());
 
@@ -73,7 +72,7 @@ public class DefaultHomePageSchemesComparator implements Comparator<String> {
         System.out.println("Before sorting: " + list);
 
         // Sort the list using the custom comparator
-        Collections.sort(list, new DefaultHomePageSchemesComparator());
+        Collections.sort(list, new DefaultFindSchemePageSchemesComparator());
 
         // Print the list after sorting
         System.out.println("After sorting: " + list);

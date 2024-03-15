@@ -13,7 +13,6 @@ public class CareLeaverCovenantComparator implements Comparator<String> {
     static final List<String> order = new ArrayList<>( );
 
     static {
-        order.addAll(backMap.keySet());
 
         order.addAll(careLeaverCovenant.keySet());
 

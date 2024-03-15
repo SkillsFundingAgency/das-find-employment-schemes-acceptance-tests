@@ -5,26 +5,24 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static sfa.das.StepDefinitions.*;
+import static sfa.das.StepDefinitions.schemesHomePageCostMap;
 
-
-public class PopularityHomePageSchemesComparator implements Comparator<String> {
+public class CostFindSchemePageSchemesComparator implements Comparator<String> {
 
     static final List<String> order = new ArrayList<>( );
-//    Popularity: (most popular first)
-//    Apprenticeships
-//    Skills Bootcamps
-//    T Levels
-//    Free Courses and additional training
-//    Higher Technical Qualifications
-//    SWAPs
-//    Supported Internships
+//    Cost: (cheapest first)
+//    Free Courses
 //    Multiply
-//    Support prisoners and prison leavers
+//    T Levels
+//    SWAPs
 //    Care Leaver Covenant
-
+//    Support prisoners and prison leavers
+//    Supported Internships
+//    Skills Bootcamps
+//    Apprenticeships
+//    HTQs
     static {
-        order.addAll(schemesHomePagePopularityMap.keySet());
+        order.addAll(schemesHomePageCostMap.keySet());
     }
 
     @Override
@@ -40,13 +38,13 @@ public class PopularityHomePageSchemesComparator implements Comparator<String> {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        list.addAll(schemesHomePagePopularityMap.keySet());
+        list.addAll(schemesHomePageCostMap.keySet());
 
         // Print the list before sorting
         System.out.println("Before sorting: " + list);
 
         // Sort the list using the custom comparator
-        Collections.sort(list, new PopularityHomePageSchemesComparator());
+        Collections.sort(list, new CostFindSchemePageSchemesComparator());
 
         // Print the list after sorting
         System.out.println("After sorting: " + list);
